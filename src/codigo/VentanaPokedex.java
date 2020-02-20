@@ -119,8 +119,9 @@ public class VentanaPokedex extends javax.swing.JFrame {
         izquierda = new javax.swing.JButton();
         nombreNombre = new javax.swing.JLabel();
         nombrePokemon = new javax.swing.JLabel();
-        alturaPesoNombre = new javax.swing.JLabel();
+        alturaNombre = new javax.swing.JLabel();
         altura = new javax.swing.JLabel();
+        pesoNombre = new javax.swing.JLabel();
         peso = new javax.swing.JLabel();
         habilidadNombre = new javax.swing.JLabel();
         habilidad = new javax.swing.JLabel();
@@ -140,7 +141,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
         movimiento3 = new javax.swing.JLabel();
         movimiento4 = new javax.swing.JLabel();
         descripcionNombre = new javax.swing.JLabel();
-        descripcion = new javax.swing.JLabel();
+        descripcion = new javax.swing.JTextPane();
         fondito = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -200,10 +201,10 @@ public class VentanaPokedex extends javax.swing.JFrame {
         nombrePokemon.setOpaque(true);
         fondo.add(nombrePokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 90, 30));
 
-        alturaPesoNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        alturaPesoNombre.setForeground(new java.awt.Color(204, 0, 0));
-        alturaPesoNombre.setText("ALTURA/PESO");
-        fondo.add(alturaPesoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(581, 160, -1, -1));
+        alturaNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        alturaNombre.setForeground(new java.awt.Color(204, 0, 0));
+        alturaNombre.setText("ALTURA");
+        fondo.add(alturaNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, -1, -1));
 
         altura.setBackground(new java.awt.Color(255, 255, 255));
         altura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -212,24 +213,29 @@ public class VentanaPokedex extends javax.swing.JFrame {
         altura.setOpaque(true);
         fondo.add(altura, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 30, 32));
 
+        pesoNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        pesoNombre.setForeground(new java.awt.Color(204, 0, 0));
+        pesoNombre.setText("PESO");
+        fondo.add(pesoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 214, -1, 20));
+
         peso.setBackground(new java.awt.Color(255, 255, 255));
         peso.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         peso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         peso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0)));
         peso.setOpaque(true);
-        fondo.add(peso, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, 30, 32));
+        fondo.add(peso, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, 30, 32));
 
         habilidadNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         habilidadNombre.setForeground(new java.awt.Color(204, 0, 0));
         habilidadNombre.setText("HABILIDAD");
-        fondo.add(habilidadNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 164, 70, 20));
+        fondo.add(habilidadNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, 70, 20));
 
         habilidad.setBackground(new java.awt.Color(255, 255, 255));
         habilidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         habilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         habilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0)));
         habilidad.setOpaque(true);
-        fondo.add(habilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 80, 32));
+        fondo.add(habilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, 110, 32));
 
         especieNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         especieNombre.setForeground(new java.awt.Color(204, 0, 0));
@@ -241,19 +247,19 @@ public class VentanaPokedex extends javax.swing.JFrame {
         especie.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         especie.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0)));
         especie.setOpaque(true);
-        fondo.add(especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 120, 32));
+        fondo.add(especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 100, 32));
 
         habitatNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         habitatNombre.setForeground(new java.awt.Color(204, 0, 0));
         habitatNombre.setText("HABITAT");
-        fondo.add(habitatNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 214, 50, 20));
+        fondo.add(habitatNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 50, 20));
 
         habitat.setBackground(new java.awt.Color(255, 255, 255));
         habitat.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         habitat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         habitat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0)));
         habitat.setOpaque(true);
-        fondo.add(habitat, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 130, 32));
+        fondo.add(habitat, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 100, 32));
 
         tiposNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         tiposNombre.setForeground(new java.awt.Color(204, 0, 0));
@@ -331,11 +337,8 @@ public class VentanaPokedex extends javax.swing.JFrame {
         descripcionNombre.setText("DESCRIPCION");
         fondo.add(descripcionNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 424, 80, 20));
 
-        descripcion.setBackground(new java.awt.Color(255, 255, 255));
+        descripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         descripcion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        descripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        descripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0)));
-        descripcion.setOpaque(true);
         fondo.add(descripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, 260, 60));
 
         fondito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Pokedex.jpg"))); // NOI18N
@@ -485,9 +488,9 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel altura;
-    private javax.swing.JLabel alturaPesoNombre;
+    private javax.swing.JLabel alturaNombre;
     private javax.swing.JButton derecha;
-    private javax.swing.JLabel descripcion;
+    private javax.swing.JTextPane descripcion;
     private javax.swing.JLabel descripcionNombre;
     private javax.swing.JLabel especie;
     private javax.swing.JLabel especieNombre;
@@ -508,6 +511,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
     private javax.swing.JLabel nombreNombre;
     private javax.swing.JLabel nombrePokemon;
     private javax.swing.JLabel peso;
+    private javax.swing.JLabel pesoNombre;
     private javax.swing.JLabel posEvolucion;
     private javax.swing.JLabel preEvolucion;
     private javax.swing.JLabel prePosNombre;
