@@ -17,6 +17,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
  *
@@ -34,7 +38,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
     Statement estado;
     ResultSet resultadoConsulta;
     Connection conexion;
-
+    Clip sonidoPasar;
     //ESTRUCTURA PARA GUARDAR TODO EL CONTENIDO DE LA BASE DE DATOS DE GOLPE
     HashMap<String, Pokemon> listaPokemons = new HashMap();
 
@@ -67,7 +71,14 @@ public class VentanaPokedex extends javax.swing.JFrame {
         Graphics2D g2 = buffer1.createGraphics();
         //dibujaFondo();
         dibujaPokemon(contador);
+        try {
+            sonidoPasar = AudioSystem.getClip();
+            sonidoPasar.open(AudioSystem.getAudioInputStream(getClass().getResource("/sonidos/sonido.wav")));
+            System.out.print("no hay error");
+        } catch (Exception ex) {
+            System.out.print(ex.getMessage());
 
+        }
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1/pokedex", "root", "");
@@ -389,6 +400,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
     private void derechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_derechaActionPerformed
 
+        sonidoPasar.start();//SUENA EL SONIDO
         contador++;
         if (contador >= 649) {
             contador = 649;
@@ -432,6 +444,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
     private void izquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_izquierdaActionPerformed
 
+        sonidoPasar.start();//SUENA EL SONIDO
         contador--;
         if (contador < 0) {
             contador = 0;
